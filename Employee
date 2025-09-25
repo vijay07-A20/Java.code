@@ -1,0 +1,43 @@
+
+package employee;
+
+public class Employee {
+    private int empId;
+    protected String name;
+    public String department;
+    public Employee(int empId, String name, String department) {
+        this.empId = empId;
+        this.name = name;
+        this.department = department;
+    }
+
+    public int getEmpId() {
+        return empId;
+    }
+
+
+    public void displayDetails() {
+        System.out.println("ID: " + empId + ", Name: " + name + ", Department: " + department);
+    }
+}
+package manager;
+import employee.Employee;
+
+public class Manager extends Employee {
+    private String role;
+    public Manager(int empId, String name, String department, String role) {
+        super(empId, name, department); 
+        this.role = role;
+    }
+    public void showManagerInfo() {
+        System.out.println("Manager Name: " + name:"+name);
+        System.out.println("Department: " + department);
+        System.out.println("Employee ID (via getter): " + getEmpId());
+        System.out.println("Role: " + role);
+    }
+    public static void main(String[] args) {
+        Manager m1 = new Manager(101, "Alice", "IT", "Team Lead");
+        m1.showManagerInfo();
+    }
+}
+
