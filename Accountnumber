@@ -1,0 +1,39 @@
+class Account {
+    private int accountNumber;
+    private String accountHolderName;
+    private double balance;
+
+    public Account(int accountNumber, String accountHolderName, double balance) {
+        this.accountNumber = accountNumber;
+        this.accountHolderName = accountHolderName;
+        this.balance = balance;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited: " + amount);
+    }
+
+    public void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn: " + amount);
+        } else {
+            System.out.println("Insufficient balance!");
+        }
+    }
+
+    public void checkBalance() {
+        System.out.println("Current Balance: " + balance);
+    }
+}
+
+public class ATM {
+    public static void main(String[] args) {
+        Account acc = new Account(101, "John Doe", 5000);
+        acc.checkBalance();
+        acc.deposit(2000);
+        acc.withdraw(3000);
+        acc.checkBalance();
+    }
+}
