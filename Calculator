@@ -1,0 +1,22 @@
+class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public double add(double a, double b) {
+        return a + b;
+    }
+
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+public class CalcTest {
+    public static void main(String[] args) {
+        Calculator c = new Calculator();
+        System.out.println("Sum (int): " + c.add(5, 10));
+        System.out.println("Sum (double): " + c.add(3.5, 2.5));
+        System.out.println("Sum (3 ints): " + c.add(2, 3, 4));
+    }
+}
